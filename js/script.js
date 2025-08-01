@@ -80,5 +80,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 }
             }
         }
-    });
+
+        // Redirección al hacer clic en tarjetas de proyectos
+document.querySelectorAll('.project-card').forEach(card => {
+    const url = card.getAttribute('data-url');
+    if (url) {
+        card.style.cursor = "pointer";
+        card.addEventListener('click', () => {
+            window.location.href = url;
+        });
+    }
 });
